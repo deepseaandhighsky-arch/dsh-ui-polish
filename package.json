@@ -56,21 +56,5 @@
     "CHANGELOG.md",
     "LICENSE",
     "THIRD_PARTY_NOTICES.md"
-  ],
-  "scripts": {
-    "build": "tsdown && node -e \"require('fs').renameSync('lib/client.iife.js','lib/client.js')\"",
-    "dev": "tsdown --watch",
-    "test": "vitest run",
-    "pack:check": "npm pack --dry-run"
-  },
-  "devDependencies": {
-    "@testing-library/react": "^16.1.0",
-    "@types/react": "^18.3.12",
-    "jsdom": "^25.0.1",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "tsdown": "^0.14.1",
-    "typescript": "^5.7.2",
-    "vitest": "^3.0.0"
-  }
+  ]
 }

@@ -35,31 +35,27 @@
 
 ### 从 GitHub 仓库安装（推荐）
 
-dsh 的插件页支持 **npm 包、Git 仓库和本地目录**。在 **插件 → 安装第三方插件** 中输入：
+dsh 的插件页支持 **npm 包、Git 仓库和本地目录**。在 **插件 → 安装第三方插件** 中输入发布包 tag：
 
 ```text
-https://github.com/deepseaandhighsky-arch/dsh-ui-polish
+https://github.com/deepseaandhighsky-arch/dsh-ui-polish#v0.4.1-dist
 ```
 
 或 GitHub 简写：
 
 ```text
-github:deepseaandhighsky-arch/dsh-ui-polish
+github:deepseaandhighsky-arch/dsh-ui-polish#v0.4.1-dist
 ```
 
-需要固定版本时使用：
-
-```text
-https://github.com/deepseaandhighsky-arch/dsh-ui-polish#v0.4.1
-```
+`v0.4.1-dist` 只包含发布包（约 33 KB，含预构建 `lib/client.js`），不会下载 `main` 分支里的源码、截图和文档；安装时**不需要** `allowBuilds` 或构建脚本授权。`main` 是完整源码仓库（约 4 MB），直接用 `github:.../dsh-ui-polish` 会下载整仓库，网络慢时容易卡住。
 
 CLI 等价命令：
 
 ```bash
-dsh plugin --profile web add https://github.com/deepseaandhighsky-arch/dsh-ui-polish
+dsh plugin --profile web add github:deepseaandhighsky-arch/dsh-ui-polish#v0.4.1-dist
 ```
 
-仓库已包含构建好的 `lib/client.js` 与 `cordis.patch.yml`，安装时**不需要** `allowBuilds` 或构建脚本授权。安装后按提示重启 `dsh web`。
+安装后按提示重启 `dsh web`。
 
 ### 从本地源码安装
 
