@@ -23,7 +23,7 @@
 - 运行时机制：`scrollFade`（泛用滚动渐隐）+ `retime`（第三方插件过渡重定时影子样式表）+ `sfx`（可选合成音效）。
 - 视觉机制：28px 7 档非线性 mask、CDS 双层阴影/深色倒角、1.8s 呼吸 + 1.1s 扫光 + 推理点光环、排版光学、输入区命中区、4 档 Framer 弹簧。
 - 验证：55/55 单元测试、`tsc --noEmit` 通过、`lib/client.js` 约 51.7 KB（gzip 15.9 KB）、`npm pack` 12 个文件约 32.9 KB。
-- 截图：0.4.0 六张（会话浅/暗、设置浅/暗、弹簧档位、dsh-context 面板）+ 0.2.0 四张 + 0.1.0 六张；0.3.0 未单独保留截图，其变化已被 0.4.0 覆盖。
+- 截图：0.4.0 六张（会话浅/暗、设置浅/暗、弹簧档位、dsh-context 面板）+ 0.2.0 四张；0.1.0 六张仅本地保留（含本地路径，未随公开仓库发布）；0.3.0 未单独保留，其变化已被 0.4.0 覆盖。
 
 ## 2. 快速命令
 
@@ -146,7 +146,7 @@ DSH_HOME="$PWD/dsh-home" npx dsh web --port 3311 --no-open
 | open-claude-ui 研究仓库 | `.testenv/open-claude-ui`（gitignored，commit `c1f923a`） | 社区逆向，非官方；v1/v2 文档 + code-examples |
 | dsh 核心 UI 包 | `.testenv/node_modules/@deepseek-ai/dsh-client-ui-*` | 0.2.1-rc.5；slot/快捷键/样式契约 |
 | dsh 设置契约 | `dsh-client-ui-settings/lib/types/client/contract/slots.d.ts` | `settings.section` 等 |
-| 截图 | `docs/screenshots/`、`docs/research/coexist-*.png` | 0.4.0 六张 + 0.2.0 四张 + 0.1.0 六张 + 共存三张 |
+| 截图 | `docs/screenshots/`、`docs/research/coexist-*.png` | 0.4.0 六张 + 0.2.0 四张 + 共存三张；0.1.0 六张仅本地（含路径，未发布） |
 
 重新获取 open-claude-ui：
 
