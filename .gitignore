@@ -1,0 +1,20 @@
+# isolated dsh runtime for testing (never commit)
+.testenv/
+
+# build artifacts
+node_modules/
+lib/
+dist/
+*.tsbuildinfo
+
+# logs
+*.log
+npm-debug.log*
+
+# editor
+.vscode/
+.idea/
+.DS_Store
+
+# zcode session metadata
+.zcode/
