@@ -62,7 +62,7 @@
 | `docs/research/UX-DIFF-REPORT.md` | 有无插件的使用体验差异报告 | ✅ **本轮新建** |
 | `docs/research/PLUGIN-UI-RESEARCH.md` | dsh-context / better-sidebar 的 UI 实现与泛用适配研究 | ✅ 含 v0.2.0 实施状态 |
 | `docs/research/UI-GAP-VS-CLAUDE-CODE.md` | Claude 桌面端 UI 差距评估与优先级 | ✅ 基于 open-claude-ui |
-| `docs/screenshots/after-*.png` | 0.1.0 历史截图（6 张，本地保留） | **未随公开仓库发布**：含本地路径；本地 `prepublic-history` 分支/备份 bundle 保留 |
+| `docs/screenshots/after-*.png` | 0.1.0 历史截图（6 张，本地保留） | **未随公开仓库发布**：含本地路径；视觉变化已被 0.4.0 覆盖 |
 | `docs/screenshots/v020-*.png` | 0.2.0 截图（4 张） | 历史 |
 | `docs/screenshots/v040-*.png` | 0.4.0 截图（6 张：会话浅/暗、设置浅/暗、弹簧档位、dsh-context 面板） | ✅ 隔离环境 |
 | `docs/research/coexist-*.png` | 三插件共存截图（3 张） | ✅ 隔离环境 |
