@@ -29,7 +29,37 @@ Settings live in **Settings → UI Polish** (`界面打磨`), a dedicated `setti
 
 ## Install
 
-The package is not published to npm yet. Build from source:
+Requires dsh `>=0.2.0 <0.3.0`.
+
+### Install from the GitHub repository (recommended)
+
+dsh's Plugins page accepts **npm package names, Git repositories and local directories**. Open **Plugins → Install third-party plugin** and enter:
+
+```text
+https://github.com/deepseaandhighsky-arch/dsh-ui-polish
+```
+
+or the GitHub shorthand:
+
+```text
+github:deepseaandhighsky-arch/dsh-ui-polish
+```
+
+Pin a release with:
+
+```text
+https://github.com/deepseaandhighsky-arch/dsh-ui-polish#v0.4.1
+```
+
+CLI equivalent:
+
+```bash
+dsh plugin --profile web add https://github.com/deepseaandhighsky-arch/dsh-ui-polish
+```
+
+The repository ships the prebuilt `lib/client.js` and `cordis.patch.yml`, so the install needs **no `allowBuilds` entry or build-script approval**. Restart `dsh web` if prompted.
+
+### Build from source
 
 ```bash
 git clone https://github.com/deepseaandhighsky-arch/dsh-ui-polish.git
@@ -44,7 +74,7 @@ dsh plugin --profile web add file:/abs/path/to/dsh-ui-polish
 dsh plugin --profile web add link:/abs/path/to/dsh-ui-polish
 ```
 
-Restart `dsh web` after installing. The plugin cleans up its stylesheet, token overrides, slot registrations, listeners and AudioContext on unload.
+The plugin cleans up its stylesheet, token overrides, slot registrations, listeners and AudioContext on unload.
 
 ### Isolated testing
 

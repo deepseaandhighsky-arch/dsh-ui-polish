@@ -94,7 +94,7 @@
 - 命中区：28×28 添加按钮上方 4px 的 `elementFromPoint`，开启 `targets` 命中按钮本身，关闭命中父容器；`::after` inset `-5px -2px`。
 - 总开关：八门控 `off`、渐隐目标 0、mask `none`、影子表 0、令牌内联样式撤回；重新开启后全部恢复。
 - 设置卡片：`inset 0 0 0 1px rgba(255,255,255,.05)` + 双层暗色阴影。
-- 单元测试 55/55；`tsc --noEmit` 通过；构建约 51.7 KB（gzip 15.9 KB）；npm pack 12 文件 32.9 KB。
+- 单元测试 55/55；`tsc --noEmit` 通过；构建约 51.7 KB（gzip 15.9 KB）；npm pack 12 文件 33.5 KB。
 
 ## 6. 后续候选
 

@@ -31,7 +31,37 @@
 
 ## 安装
 
-要求 dsh `>=0.2.0 <0.3.0`。当前尚未发布到 npm，请从源码构建后安装：
+要求 dsh `>=0.2.0 <0.3.0`。
+
+### 从 GitHub 仓库安装（推荐）
+
+dsh 的插件页支持 **npm 包、Git 仓库和本地目录**。在 **插件 → 安装第三方插件** 中输入：
+
+```text
+https://github.com/deepseaandhighsky-arch/dsh-ui-polish
+```
+
+或 GitHub 简写：
+
+```text
+github:deepseaandhighsky-arch/dsh-ui-polish
+```
+
+需要固定版本时使用：
+
+```text
+https://github.com/deepseaandhighsky-arch/dsh-ui-polish#v0.4.1
+```
+
+CLI 等价命令：
+
+```bash
+dsh plugin --profile web add https://github.com/deepseaandhighsky-arch/dsh-ui-polish
+```
+
+仓库已包含构建好的 `lib/client.js` 与 `cordis.patch.yml`，安装时**不需要** `allowBuilds` 或构建脚本授权。安装后按提示重启 `dsh web`。
+
+### 从本地源码安装
 
 ```bash
 git clone https://github.com/deepseaandhighsky-arch/dsh-ui-polish.git
@@ -46,7 +76,7 @@ dsh plugin --profile web add file:/abs/path/to/dsh-ui-polish
 dsh plugin --profile web add link:/abs/path/to/dsh-ui-polish
 ```
 
-安装后重启 `dsh web`。插件自带卸载清理：卸载或热重载时，样式表、令牌覆盖、Slot 注册与滚动监听全部随插件 fiber 自动回收。
+插件自带卸载清理：卸载或热重载时，样式表、令牌覆盖、Slot 注册与滚动监听全部随插件 fiber 自动回收。
 
 **隔离测试**：dsh 支持用 `DSH_HOME` 环境变量重定向全部状态，可与生产环境完全隔离：
 
@@ -164,7 +194,7 @@ npm test          # vitest，55 个单元测试
 | 重新开启：八门控 on、令牌与双层阴影恢复、渐隐目标重新打标 | ✅ |
 | 尺寸/溢出门控：空的 Git 面板（43px、无溢出）未被打标 | ✅ |
 | 单元测试 55/55（泛用发现谓词与引擎、时长缩放/影子表、section 注册、双引擎同步矩阵、8 组门控、弹簧采样、音效调度、命中区、光学规则、卸载清理等） | ✅ |
-| `tsc --noEmit`、构建 51.7 KB（gzip 15.9 KB）、npm pack 12 文件 32.9 KB | ✅ |
+| `tsc --noEmit`、构建 51.7 KB（gzip 15.9 KB）、npm pack 12 文件 33.5 KB | ✅ |
 
 ## 已知限制
 

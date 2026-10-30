@@ -1,6 +1,6 @@
 {
   "name": "dsh-ui-polish",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "dsh 原生 UI 设计优化插件：在 dsh 本土设计语言之上做观感与交互打磨（双层阴影、28px 七档渐隐、状态光晕、排版光学、四档弹簧、可选合成音效），并泛用适配第三方插件界面；不改变框架与品牌视觉。",
   "license": "MIT",
   "author": "deepseaandhighsky-arch",
@@ -60,7 +60,6 @@
   "scripts": {
     "build": "tsdown && node -e \"require('fs').renameSync('lib/client.iife.js','lib/client.js')\"",
     "dev": "tsdown --watch",
-    "prepare": "npm run build",
     "test": "vitest run",
     "pack:check": "npm pack --dry-run"
   },

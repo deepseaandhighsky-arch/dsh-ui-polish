@@ -1,6 +1,6 @@
 # AGENTS.md — dsh-ui-polish 项目工作指南
 
-> 面向后续 AI agent 与协作者的入口文档。最后更新：2026-10-30（v0.4.0）。
+> 面向后续 AI agent 与协作者的入口文档。最后更新：2026-10-30（v0.4.1）。
 > 资产清单见 `docs/PROJECT-ASSETS.md`，文档索引见 `docs/README.md`，CDS 资产调用矩阵见 `docs/research/CDS-ASSET-MAP.md`，体验差异报告见 `docs/research/UX-DIFF-REPORT.md`。
 
 ## 0. 项目定位与硬约束
@@ -15,14 +15,14 @@
 
 判断标准：一个改动如果会让用户"找不到原来的东西"，就不属于本插件。
 
-## 1. 当前状态（v0.4.0）
+## 1. 当前状态（v0.4.1）
 
-- npm 包 `dsh-ui-polish@0.4.0`；annotated tag `v0.4.0`。
+- npm 包 `dsh-ui-polish@0.4.1`；annotated tag `v0.4.1`（功能同 0.4.0，修复 GitHub 仓库安装）。
 - 设置：`设置 → 界面打磨`（独立 `settings.section` 分区），总开关 + 8 组：
   `motion` / `elevation` / `fades` / `glow` / `plugins` / `optics` / `targets` / `sound`；卡片底部另有 4 档「弹簧手感」选择。
 - 运行时机制：`scrollFade`（泛用滚动渐隐）+ `retime`（第三方插件过渡重定时影子样式表）+ `sfx`（可选合成音效）。
 - 视觉机制：28px 7 档非线性 mask、CDS 双层阴影/深色倒角、1.8s 呼吸 + 1.1s 扫光 + 推理点光环、排版光学、输入区命中区、4 档 Framer 弹簧。
-- 验证：55/55 单元测试、`tsc --noEmit` 通过、`lib/client.js` 约 51.7 KB（gzip 15.9 KB）、`npm pack` 12 个文件约 32.9 KB。
+- 验证：55/55 单元测试、`tsc --noEmit` 通过、`lib/client.js` 约 51.7 KB（gzip 15.9 KB）、`npm pack` 12 个文件约 33.5 KB。
 - 截图：0.4.0 六张（会话浅/暗、设置浅/暗、弹簧档位、dsh-context 面板）+ 0.2.0 四张；0.1.0 六张仅本地保留（含本地路径，未随公开仓库发布）；0.3.0 未单独保留，其变化已被 0.4.0 覆盖。
 
 ## 2. 快速命令
@@ -168,7 +168,7 @@ git clone --depth 1 https://github.com/Caho1/open-claude-ui .testenv/open-claude
 - 0.3.0 未单独保留截图；其视觉变化已被 0.4.0 六张截图覆盖。
 - 设置分区图标为通用齿轮（契约无 icon 字段）。
 - `engines.dsh: >=0.2.0 <0.3.0`；dsh 处于 developer preview，升级需重新验证。
-- `lib/`、`.testenv/`、`.zcode/`、`node_modules/` 均被 gitignore；发布包靠 build 产物。
+- `.testenv/`、`.zcode/`、`node_modules/` 均被 gitignore；`lib/client.js` **已纳入版本控制**（GitHub 安装无需构建脚本），只忽略 `lib/client.iife.js`/source map 等临时产物。
 
 ## 9. 编辑规范与踩坑
 
@@ -191,7 +191,7 @@ git clone --depth 1 https://github.com/Caho1/open-claude-ui .testenv/open-claude
 - 语义化版本；CHANGELOG 用 Keep a Changelog（中文）；新功能升 minor，修复升 patch。
 - 提交信息：`feat: / fix: / test: / docs: / chore:` + 中文摘要。
 - 发布：build → `npm run pack:check` → commit → `git tag -a vX.Y.Z`。
-- 不要提交 `.testenv/`、`.zcode/`、`lib/`、`node_modules/`、`*.log`。
+- 不要提交 `.testenv/`、`.zcode/`、`node_modules/`、`*.log`；**要提交 `lib/client.js`**（GitHub 仓库安装依赖它），提交前先 `npm run build`。临时文件 `lib/client.iife.js`、`lib/*.map` 不提交。
 
 ## 11. 下一步（v0.4.0 后的候选）
 

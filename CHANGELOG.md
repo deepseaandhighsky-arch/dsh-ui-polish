@@ -5,6 +5,23 @@
 
 ## [Unreleased]
 
+## [0.4.1] - 2026-10-30
+
+GitHub 仓库安装修复版本。
+
+### 修复
+
+- 修复在 dsh 插件页用 GitHub 仓库地址安装时报 `ERR_PNPM_GIT_DEP_PREPARE_NOT_ALLOWED` 的问题：将构建好的 `lib/client.js` 纳入版本控制，并移除 `prepare` 构建脚本。安装 GitHub 仓库时不再需要 `allowBuilds` 或构建脚本授权。
+- `.gitignore` 只忽略临时构建文件（`lib/client.iife.js`、source map），不再忽略 `lib/client.js`。
+
+### 变更
+
+- 版本 0.4.1；README 增加「从 GitHub 仓库安装」步骤（UI 与 CLI）。
+
+### 验证
+
+- `npm test` 55/55；`tsc --noEmit` 通过；`npm run build` 生成 51.7 KB 客户端；仓库包含 `lib/client.js` 与 `cordis.patch.yml`。
+
 ## [0.4.0] - 2026-10-30
 
 交互手感与反馈版本。把 Framer Motion 的四套弹簧预设翻译为 CSS `linear()`，补上可选的合成音效与输入区命中区，并交付有无插件的体验差异报告。

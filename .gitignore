@@ -3,7 +3,9 @@
 
 # build artifacts
 node_modules/
-lib/
+lib/client.iife.js
+lib/*.map
+lib/*.d.ts
 dist/
 *.tsbuildinfo
 

@@ -1,18 +1,18 @@
 # 项目资产盘点（2026-10-30）
 
-> 包：`dsh-ui-polish@0.4.0` · tag `v0.4.0`（本次发布）· CDS 资产调用矩阵见 `docs/research/CDS-ASSET-MAP.md` · 体验差异见 `docs/research/UX-DIFF-REPORT.md`
+> 包：`dsh-ui-polish@0.4.1` · tag `v0.4.1`（功能同 0.4.0，修复 GitHub 仓库安装）· CDS 资产调用矩阵见 `docs/research/CDS-ASSET-MAP.md` · 体验差异见 `docs/research/UX-DIFF-REPORT.md`
 > 定位：dsh UI 的**视觉 / 交互 / 性能**优化插件；不改变 UI 分布与信息架构。
 
 ## 1. 状态快照
 
 | 项目 | 当前值 | 证据 |
 |---|---|---|
-| 版本 | 0.4.0 | `package.json`、`package-lock.json`（本轮已同步） |
-| Git | `v0.4.0` 发布提交 | `git status` / `git tag -n` |
-| 单元测试 | 55/55（10 个文件） | 2026-10-30 19:57 `vitest run` |
+| 版本 | 0.4.1 | `package.json`、`package-lock.json`（本轮已同步） |
+| Git | `v0.4.1` 发布提交 | `git status` / `git tag -n` |
+| 单元测试 | 55/55（10 个文件） | 2026-10-30 22:16 `vitest run` |
 | 类型检查 | 通过 | `npx tsc --noEmit` |
-| 构建产物 | `lib/client.js` 51,740 B（51.7 KB，gzip 15.9 KB） | `npm run build` |
-| npm 包 | 12 个文件，32.9 KB（unpacked 92.6 KB；含 LICENSE/README.en/THIRD_PARTY_NOTICES） | `npm pack --dry-run` |
+| 构建产物 | `lib/client.js` 51,740 B（51.7 KB，gzip 15.9 KB）；**已纳入版本控制** | `npm run build` |
+| npm 包 | 12 个文件，33.5 KB（unpacked 94.6 KB；含 LICENSE/README.en/THIRD_PARTY_NOTICES） | `npm pack --dry-run` |
 | 隔离运行 | dsh 0.2.1-rc.5 @ 127.0.0.1:3311 | `.testenv/web.log` |
 
 ## 2. 源码资产
@@ -86,15 +86,17 @@
 
 | 资产 | 状态 |
 |---|---|
-| `lib/client.js` | 已构建；gitignore；npm 包含 |
+| `lib/client.js` | 已构建并纳入版本控制（GitHub 安装无需构建脚本）；npm 包含 |
 | `cordis.patch.yml` | `insert: dsh-ui-polish` |
 | `index.js` | 主机 no-op |
 | `icon.svg` | 插件图标 |
 | `locale/zh.json`、`locale/en.json` | 仅 meta；**未接线** |
-| `package-lock.json` | 本轮从 0.3.0 同步到 0.4.0 |
-| Git tag | `v0.4.0` → 本次发布提交 |
+| `package-lock.json` | 本轮从 0.4.0 同步到 0.4.1 |
+| Git tag | `v0.4.1` → 本次发布提交 |
 
-## 6. 本轮整理动作（0.4.0）
+## 6. 本轮整理动作（0.4.0/0.4.1）
+
+0. **0.4.1 GitHub 安装修复**：提交 `lib/client.js`、移除 `prepare`，`.gitignore` 只忽略临时构建文件；插件页可直接用仓库地址安装，无需 `allowBuilds`。
 
 1. **4 档 Framer 弹簧**：用二阶阻尼振子采样为 CSS `linear()`（轻快/从容/弹性/咬合），设置页新增分段控件；作用于消息入场、开关、光晕。
 2. **合成音效**：`src/audio/sfx.ts` 三声 cue（发送/完成/出错），默认关闭，手势解锁，卸载关闭；AudioWorklet 经评估不采用。
@@ -120,7 +122,7 @@
 | 暗色字重补偿依赖可变字体 | Windows 静态系统字体忽略 `font-weight 390` | 保持温和值；不要改成布局级字号调整 |
 | open-claude-ui 不在仓库内 | 1.1 GB 且非本项目代码 | 保持 gitignored，按需 clone（命令见 AGENTS.md） |
 
-## 8. 当前功能成果（v0.4.0）
+## 8. 当前功能成果（v0.4.1）
 
 - **8 组优化**：运动、阴影、滚动渐隐、状态光晕、插件适配、排版光学、输入区命中区、交互音效；另有 4 档弹簧手感。
 - **独立设置分区**：`设置 → 界面打磨`，与「通用设置」并列；总开关 + 8 组 + 弹簧档位。
