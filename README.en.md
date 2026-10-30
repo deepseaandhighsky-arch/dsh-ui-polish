@@ -33,31 +33,27 @@ Requires dsh `>=0.2.0 <0.3.0`.
 
 ### Install from the GitHub repository (recommended)
 
-dsh's Plugins page accepts **npm package names, Git repositories and local directories**. Open **Plugins → Install third-party plugin** and enter:
+dsh's Plugins page accepts **npm package names, Git repositories and local directories**. Open **Plugins → Install third-party plugin** and enter the distribution tag:
 
 ```text
-https://github.com/deepseaandhighsky-arch/dsh-ui-polish
+https://github.com/deepseaandhighsky-arch/dsh-ui-polish#v0.4.1-dist
 ```
 
 or the GitHub shorthand:
 
 ```text
-github:deepseaandhighsky-arch/dsh-ui-polish
+github:deepseaandhighsky-arch/dsh-ui-polish#v0.4.1-dist
 ```
 
-Pin a release with:
-
-```text
-https://github.com/deepseaandhighsky-arch/dsh-ui-polish#v0.4.1
-```
+`v0.4.1-dist` contains only the publishable package (about 33 KB, including the prebuilt `lib/client.js`); it does not download the source, screenshots and docs on `main`. The install needs **no `allowBuilds` entry or build-script approval**. `main` is the full source repository (about 4 MB); using `github:.../dsh-ui-polish` without the tag downloads the whole repository and can be slow on constrained networks.
 
 CLI equivalent:
 
 ```bash
-dsh plugin --profile web add https://github.com/deepseaandhighsky-arch/dsh-ui-polish
+dsh plugin --profile web add github:deepseaandhighsky-arch/dsh-ui-polish#v0.4.1-dist
 ```
 
-The repository ships the prebuilt `lib/client.js` and `cordis.patch.yml`, so the install needs **no `allowBuilds` entry or build-script approval**. Restart `dsh web` if prompted.
+Restart `dsh web` if prompted.
 
 ### Build from source
 

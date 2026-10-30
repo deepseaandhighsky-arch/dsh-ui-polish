@@ -12,6 +12,7 @@ GitHub 仓库安装修复版本。
 ### 修复
 
 - 修复在 dsh 插件页用 GitHub 仓库地址安装时报 `ERR_PNPM_GIT_DEP_PREPARE_NOT_ALLOWED` 的问题：将构建好的 `lib/client.js` 纳入版本控制，并移除 `prepare` 构建脚本。安装 GitHub 仓库时不再需要 `allowBuilds` 或构建脚本授权。
+- 新增 `dist` 分支/tag `v0.4.1-dist`：只含发布包（约 33 KB），GitHub 安装使用 `#v0.4.1-dist`，不再下载整仓库的源码/截图/文档。
 - `.gitignore` 只忽略临时构建文件（`lib/client.iife.js`、source map），不再忽略 `lib/client.js`。
 
 ### 变更
